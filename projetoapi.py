@@ -5,12 +5,7 @@ meuApp = Flask(__name__)
 professores = [  
     {"id":1, "nome":"caio", "idade": "40", "materia":"historia", "observacao":"obs"},
     ]
-Turma = [
-    {"id":1, "descricao":"obs", "professor":"caio", "ativo":"sim"},
-]
-aluno = [
-    {"id":1, "nome":"jose", "idade": "18", "turma":"a", "datanasc":"20/12/2005", "nota1":6, "nota2":7, "media":}
-]
+
 @meuApp.route('/professors', methods=['GET'])
 def get_users():
     return jsonify({'professores': professores})
@@ -28,12 +23,12 @@ def create_user():
     professores.append(professor)
     return jsonify(professor), 201
 
-@meuApp.route('/users/<int:user_id>', methods=['GET'])
-def get_user(user_id):
-    for usuario in usuarios:
-        print(usuario)
-        if usuario['id'] == user_id:
-            return usuario
+@meuApp.route('/professors/<int:professor_id>', methods=['GET'])
+def get_user(professor_id,professor_materia):
+    for professor in professores:
+        print(professor)
+        if professor['id'] == professor_id:
+            return professor
     return jsonify({'mensagem': 'Usuário não encontrado'}), 404
 
 @meuApp.route('/users/<int:user_id>', methods=['PUT'])
