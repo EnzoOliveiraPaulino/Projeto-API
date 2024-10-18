@@ -10,6 +10,11 @@ alunos = [
         "media_final": (8.5 + 7.5) / 2,
     }
 ]
+
+# create e um validador de dados
+# validador vai certificar q os dados inseridos estao corretos e preenchidos (not nul)
+# create basico vai criar um novo aluno 
+
 def criar_aluno(data):
     """Cria um novo aluno com os dados fornecidos."""
     
