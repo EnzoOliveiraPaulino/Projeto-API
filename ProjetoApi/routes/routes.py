@@ -5,17 +5,17 @@ from controllers.aluno_controller import get_alunos, create_aluno, update_aluno,
 
 bp = Blueprint('routes', __name__)
 
-# Professor routes
+# Professores routes
 bp.route('/professores', methods=['GET'])(get_professores)
 bp.route('/professores', methods=['POST'])(create_professor)
 bp.route('/professores/<int:professor_id>', methods=['GET'])(get_professor)
 
-# Turma routes
+# Turmas routes
 bp.route('/turmas', methods=['GET'])(get_turmas)
 bp.route('/turmas', methods=['POST'])(create_turma)
 bp.route('/turmas/<int:turma_id>', methods=['GET'])(get_turma)
 
-# Aluno routes
+# Alunos routes
 bp.route('/alunos', methods=['GET'])(get_alunos)
 bp.route('/alunos', methods=['POST'])(create_aluno)
 bp.route('/alunos/<int:aluno_id>', methods=['PUT'])(update_aluno)
